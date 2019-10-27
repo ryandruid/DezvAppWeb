@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoSharing", "PhotoSharing\PhotoSharing.csproj", "{BF78F58E-76A2-4D0E-A1B7-A3CD746E317D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF78F58E-76A2-4D0E-A1B7-A3CD746E317D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF78F58E-76A2-4D0E-A1B7-A3CD746E317D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF78F58E-76A2-4D0E-A1B7-A3CD746E317D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF78F58E-76A2-4D0E-A1B7-A3CD746E317D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34CCC98F-6667-45FC-B3CC-F669B9A51227}
+	EndGlobalSection
+EndGlobal

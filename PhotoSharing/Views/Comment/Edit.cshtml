@@ -1,0 +1,18 @@
+﻿@model PhotoSharing.Models.Comment
+@{
+    ViewBag.Title = "Editare comentariu";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form method="post" action="/Comment/Edit/@Model.PostId">
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+    <br />
+    @Html.Label("Content", "Comentariu nou!")
+    <br />
+    @Html.EditorFor(m => m.Content)
+    @Html.ValidationMessageFor(model => model.Content, null, new { @class = "text-danger " })
+    <br />
+    <button class="btn btn-sm btn-success" type="submit">Modifica comentariu</button>
+</form>
+

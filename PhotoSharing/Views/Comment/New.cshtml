@@ -1,0 +1,21 @@
+﻿@model PhotoSharing.Models.Comment
+@{
+    ViewBag.Titlu = "Creating comment";
+}
+
+<h2>@ViewBag.Titlu</h2>
+<form method="post" action="/Comment/New">
+
+
+    @Html.Label("Content", "Comenteaza!")
+    <br />
+    @Html.TextArea("Content", null, new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.Content, "Content field required", new { @class = "text-danger " })
+    <br /><br />
+    @Html.Hidden("Created", DateTime.Now, new { @class = "form-control" })
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.UserId)
+    <button class="btn btn-sm btn-success" type="submit">Add comment</button>
+</form>
+
+

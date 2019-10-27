@@ -1,0 +1,34 @@
+﻿@model PhotoSharing.Models.Category
+
+
+@{
+    ViewBag.Title = "Afisare categorie";
+}
+
+<h1>@Model.CategoryName</h1>
+<br />
+
+
+@foreach (PhotoSharing.Models.Image image in ViewBag.Images)
+{
+    <div class="responsive">
+        <div class="gallery">
+            @Html.Partial("HomeInfo", image)
+        </div>
+    </div>
+    <br />
+
+}
+
+<br /><br />
+
+<hr />
+<a class="btn btn-sm btn-success" href="/Category/Edit/@Model.CategoryId">Modifica categoria</a>
+<br /><br />
+<form method="post" action="/Category/Delete/@Model.CategoryId">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button class="btn btn-sm btn-danger" type="submit">Sterge categoria</button>
+</form>
+<br /><br />
+<a class="btn btn-sm btn-success" href="/Category/Index">Inapoi la categorii</a>
+<br />

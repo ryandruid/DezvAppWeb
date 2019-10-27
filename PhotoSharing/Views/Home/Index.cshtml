@@ -1,0 +1,27 @@
+﻿<head>
+    <link href="@Url.Content("~/Styles/home.css")" rel="stylesheet" type="text/css" />
+
+</head>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (TempData.ContainsKey("message"))
+{
+    <h3 class="alert alert-info" role="alert">@ViewBag.message</h3>
+}
+
+
+  
+
+       @foreach (PhotoSharing.Models.Image image in ViewBag.Images)
+        {
+            <div class="responsive">
+                <div class="gallery">
+                    @Html.Partial("HomeInfo", image)
+                </div>
+            </div>
+
+        }
+    

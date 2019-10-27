@@ -1,0 +1,27 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">@Model.Title</div>
+    
+    <img src="@Url.Content(Model.Path)" alt="image" />
+
+    <div class="panel-body">
+
+        <br />
+        Descriere: <strong>@Model.Description</strong>
+        <br />
+        <a class="btn btn-sm btn-success" href="/Image/Show/@Model.Id">Afiseaza imaginea</a>
+
+        <br />
+        <a class="btn btn-sm btn-info" href="/Image/Edit/@Model.Id">
+            Modifica imagine
+        </a>
+        <br />
+        <form method="post" action="/Image/Delete/@Model.Id">
+            @Html.HttpMethodOverride(HttpVerbs.Delete)
+            <button class="btn btn-sm btn-danger" type="submit">Sterge imagine</button>
+        </form>
+
+
+    </div>
+</div>
+<br />
+

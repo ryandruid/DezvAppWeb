@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Afisare imagini";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (TempData.ContainsKey("message"))
+{
+    <h3 class="alert alert-info" role="alert">@ViewBag.message</h3>
+}
+
+@foreach (PhotoSharing.Models.Image image in ViewBag.Images)
+{
+   
+    @Html.Partial("ImageInfo", image);
+    
+}
+
+
+
+<a class="btn btn-sm btn-success" href="/Image/New">Adauga o imagine</a>
+<br /><br />
+

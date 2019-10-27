@@ -1,0 +1,8 @@
+﻿@Model.Content
+<br />
+<a class="btn btn-sm btn-info" href="/Comment/Edit/@Model.PostId">Modifica comentariu</a>
+<br />
+<form method="post" action="/Comment/Delete/@Model.PostId">
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+    <button class="btn btn-sm btn-danger" type="submit">Sterge comentariu</button>
+</form>

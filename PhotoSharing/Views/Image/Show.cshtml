@@ -1,0 +1,41 @@
+﻿@model PhotoSharing.Models.Image
+
+@{
+    ViewBag.Title = "Afisare imagine";
+}
+
+
+
+    <h2>@Model.Title</h2>
+
+    <br />
+
+
+    <img src="@Url.Content(Model.Path)" alt="image" />
+    <br />
+    Descriere: <strong>@Model.Description</strong>
+    <br />
+    <i class="glyphicon glyphicon-user"></i> <i>Upload de:</i> <strong>
+        @Model.User.UserName
+    </strong>
+    <br />
+    <a class="btn btn-sm btn-success" href="/Image/Edit/@Model.Id">
+        Modifica imagine
+    </a>
+    <br />
+    <form method="post" action="/Image/Delete/@Model.Id">
+        @Html.HttpMethodOverride(HttpVerbs.Delete)
+        <button class="btn btn-sm btn-danger" type="submit">Sterge imagine</button>
+    </form>
+
+    @foreach (PhotoSharing.Models.Comment comment in ViewBag.Comments)
+    {
+
+        @Html.Partial("CommentInfo", comment)
+
+
+    }
+
+    <br />
+    <a class="btn btn-sm btn-success" href="/Comment/New/@Model.Id">Adauga comentariu</a>
+

@@ -1,0 +1,28 @@
+﻿<head>
+    <link href="@Url.Content("~/Styles/Category.css")" rel="stylesheet" type="text/css" />
+
+</head>
+@{
+    ViewBag.Titlu = "Categorii";
+}
+
+
+    <h2>@ViewBag.Titlu</h2>
+
+    @if (TempData.ContainsKey("message"))
+    {
+        <h3 class="alert alert-info" role="alert">@ViewBag.message</h3>
+    }
+
+    @foreach (var category in ViewBag.Categories)
+    {
+
+        <a class="button" href="/Category/Show/@category.CategoryId">@category.CategoryName</a>
+        <br />
+        <hr />
+        <br />
+    }
+
+    <a class="class="button button2""  href="/Category/New">Adauga categorie</a>
+    <br />
+
